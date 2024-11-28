@@ -1,9 +1,0 @@
-somos una Pyme de 10 empleados.
-
-nuestro primer proyecto es:
-	gestión de stock y ventas de una pequeña empresa de comercialización de productos agrícolas y ganadería.
-	Los clientes son una  empresa familiar sin experiencia con aplicaciones informáticas.
-
-
-Pensar un ciclo de desarrollo en V para dicha empresa
-	trabajaremos con V prototipado
