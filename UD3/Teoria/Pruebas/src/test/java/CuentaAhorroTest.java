@@ -1,12 +1,16 @@
 import java.time.LocalDate;
 
-public class CuentaAhorroTest {
+class CuentaAhorroTest {
 
-    Cliente cliente = new Cliente(
+    Cliente cliente = cliente = new ClienteParticular(
         "1",
         "Pepito",
         "Calle Falsa 123",
         "123 123 123",
         "pepito123@gmail.com",
-        LocalDate.now());
+        LocalDate.now(),
+        "12345678X",
+        "Diaz",
+        false,
+        0);
 }

@@ -1,11 +1,13 @@
+
 import java.util.Date;
 
 public abstract class CuentaBancaria {
-    protected String id;
-    protected Cliente titular;
-    protected Date fechaCreacion;
-    protected double saldo;
-    protected double tipoInteres;
+    //se cambió todos a private y se implementaron getters y setters
+    private String id;
+    private Cliente titular;
+    private Date fechaCreacion;
+    private double saldo;
+    private double tipoInteres;
 
     public CuentaBancaria(String id, Cliente titular, Date fechaCreacion, double saldo, double tipoInteres) {
         this.id = id;
@@ -19,13 +21,67 @@ public abstract class CuentaBancaria {
         saldo += cantidad;
     }
 
-    public abstract void retirar(double cantidad);
+    // se implementó retirar ya que no tenia sentido como abstracta
+    public void retirar(double cantidad) {
+        if (this.saldo - cantidad < 0) {
+            throw new UnsupportedOperationException("Saldo insuficiente.");
+        } else {
+            this.saldo -= cantidad;
+        }
+    }
 
     public double getSaldo() {
         return saldo;
     }
 
     public abstract double invertir(double cantidad, int meses);
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getTipoInteres() {
+        return tipoInteres;
+    }
+
+    public void setTipoInteres(double tipoInteres) {
+        this.tipoInteres = tipoInteres;
+    }
+
+    @Override
+    public String toString() {
+        return "CuentaBancaria{" +
+            "id='" + id + '\'' +
+            ", titular=" + titular +
+            ", fechaCreacion=" + fechaCreacion +
+            ", saldo=" + saldo +
+            ", tipoInteres=" + tipoInteres +
+            '}';
+    }
 }
 
 
