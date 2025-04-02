@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ClienteParticular extends Cliente {
     private String dni;
@@ -6,7 +6,7 @@ public class ClienteParticular extends Cliente {
     private boolean nominaDomiciliada;
     private double cuantiaNomina;
 
-    public ClienteParticular(String id, String nombre, String direccion, String contacto, String email, Date fechaAlta, String dni, String apellidos, boolean nominaDomiciliada, double cuantiaNomina) {
+    public ClienteParticular(String id, String nombre, String direccion, String contacto, String email, LocalDate fechaAlta, String dni, String apellidos, boolean nominaDomiciliada, double cuantiaNomina) {
         super(id, nombre, direccion, contacto, email, fechaAlta);
         this.dni = dni;
         this.apellidos = apellidos;

@@ -1,8 +1,6 @@
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Cliente {
@@ -14,7 +12,7 @@ public class Cliente {
     protected LocalDate fechaAlta;
     protected List<CuentaBancaria> cuentas;
     protected boolean moroso;
-    private int antiguedad;
+    protected int antiguedad;
 
     public Cliente(String id, String nombre, String direccion, String contacto, String email, LocalDate fechaAlta) {
         this.id = id;
@@ -46,10 +44,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void calcularEdad(){
+    public void calcularAntiguedad(){
         LocalDate hoy = LocalDate.now();
         this.antiguedad = Period.between(fechaAlta, hoy).getYears();
     }
 }
+
 
 
