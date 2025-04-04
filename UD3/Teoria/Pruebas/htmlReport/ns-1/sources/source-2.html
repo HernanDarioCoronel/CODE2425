@@ -1,0 +1,260 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Cliente</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Cliente (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Cliente</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    21,7%
+  </span>
+  <span class="absValue">
+    (5/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    29,2%
+  </span>
+  <span class="absValue">
+    (14/48)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import java.time.LocalDate;
+&nbsp;import java.time.Period;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public abstract class Cliente {
+&nbsp;    //se cambió todos a private y se implementaron getters y setters
+&nbsp;    private String id;
+&nbsp;    private String nombre;
+&nbsp;    private String direccion;
+&nbsp;    private String contacto;
+&nbsp;    private String email;
+&nbsp;    private LocalDate fechaAlta;
+&nbsp;    private List&lt;CuentaBancaria&gt; cuentas;
+&nbsp;    private boolean moroso;
+&nbsp;    private int antiguedad;
+&nbsp;
+<b class="fc">&nbsp;    protected Cliente(String id, String nombre, String direccion, String contacto, String email, LocalDate fechaAlta) {</b>
+<b class="fc">&nbsp;        this.id = id;</b>
+<b class="fc">&nbsp;        this.nombre = nombre;</b>
+<b class="fc">&nbsp;        this.direccion = direccion;</b>
+<b class="fc">&nbsp;        this.contacto = contacto;</b>
+&nbsp;        //se inicializó email
+<b class="fc">&nbsp;        this.email = email;</b>
+<b class="fc">&nbsp;        this.fechaAlta = fechaAlta;</b>
+<b class="fc">&nbsp;        this.cuentas = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.moroso = false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Eliminado un constructor vacío
+&nbsp;
+&nbsp;    public void setMoroso(boolean moroso) {
+<b class="nc">&nbsp;        this.moroso = moroso;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean estaEnRojos() {
+<b class="nc">&nbsp;        for (CuentaBancaria cuenta : cuentas) {</b>
+<b class="nc">&nbsp;            if (cuenta.getSaldo() &lt; 0) {</b>
+<b class="nc">&nbsp;                return true;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return moroso;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void cambiarNombre(String nombre) {
+<b class="fc">&nbsp;        this.nombre = nombre;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void calcularAntiguedad() {
+<b class="fc">&nbsp;        LocalDate hoy = LocalDate.now();</b>
+<b class="fc">&nbsp;        this.antiguedad = Period.between(fechaAlta, hoy).getYears();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getId() {
+<b class="nc">&nbsp;        return id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setId(String id) {
+<b class="nc">&nbsp;        this.id = id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getNombre() {
+<b class="fc">&nbsp;        return nombre;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNombre(String nombre) {
+<b class="nc">&nbsp;        this.nombre = nombre;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getDireccion() {
+<b class="nc">&nbsp;        return direccion;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDireccion(String direccion) {
+<b class="nc">&nbsp;        this.direccion = direccion;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getContacto() {
+<b class="nc">&nbsp;        return contacto;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setContacto(String contacto) {
+<b class="nc">&nbsp;        this.contacto = contacto;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEmail() {
+<b class="nc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEmail(String email) {
+<b class="nc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LocalDate getFechaAlta() {
+<b class="nc">&nbsp;        return fechaAlta;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setFechaAlta(LocalDate fechaAlta) {
+<b class="nc">&nbsp;        this.fechaAlta = fechaAlta;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;CuentaBancaria&gt; getCuentas() {
+<b class="nc">&nbsp;        return cuentas;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setCuentas(List&lt;CuentaBancaria&gt; cuentas) {
+<b class="nc">&nbsp;        this.cuentas = cuentas;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isMoroso() {
+<b class="nc">&nbsp;        return moroso;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getAntiguedad() {
+<b class="fc">&nbsp;        return antiguedad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAntiguedad(int antiguedad) {
+<b class="nc">&nbsp;        this.antiguedad = antiguedad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        StringBuilder datos = new StringBuilder();</b>
+<b class="nc">&nbsp;        datos.append(&quot;, nombre: {&#39;&quot;).append(nombre).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;id: &#39;&quot;).append(id).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, direccion: &#39;&quot;).append(direccion).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, contacto: &#39;&quot;).append(contacto).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, email: &#39;&quot;).append(email).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, fechaAlta: &#39;&quot;).append(fechaAlta).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, moroso: &#39;&quot;).append(moroso ? &quot;si&quot; : &quot;no&quot;).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, antiguedad: &#39;&quot;).append(antiguedad).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;Cuentas: {&quot;);</b>
+<b class="nc">&nbsp;        for (CuentaBancaria cta : cuentas) {</b>
+<b class="nc">&nbsp;            datos.append(cta.toString());</b>
+&nbsp;        }
+<b class="nc">&nbsp;        datos.append(&quot;}&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        return datos.toString();</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-04-04 18:48</div>
+</div>
+</body>
+</html>

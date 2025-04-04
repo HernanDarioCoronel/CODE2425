@@ -13,4 +13,11 @@ public class CuentaInversion extends CuentaBancaria{
     public double invertir(double cantidad, int meses) {
         return cantidad * meses * 0.1;
     }
+
+    @Override
+    public String toString() {
+        String datos = super.toString();
+        return "Cuenta de Inversion" +
+            datos;
+    }
 }

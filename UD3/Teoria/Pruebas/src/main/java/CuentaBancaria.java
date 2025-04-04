@@ -74,13 +74,15 @@ public abstract class CuentaBancaria {
 
     @Override
     public String toString() {
-        return "CuentaBancaria{" +
-            "id='" + id + '\'' +
-            ", titular=" + titular +
-            ", fechaCreacion=" + fechaCreacion +
-            ", saldo=" + saldo +
-            ", tipoInteres=" + tipoInteres +
-            '}';
+        StringBuilder datos = new StringBuilder();
+        datos.append("{");
+        datos.append("id='").append(id).append('\'');
+        datos.append(", titular=").append(titular);
+        datos.append(", fechaCreacion=").append(fechaCreacion);
+        datos.append(", saldo=").append(saldo);
+        datos.append(", tipoInteres=").append(tipoInteres);
+        datos.append('}');
+        return datos.toString();
     }
 }
 

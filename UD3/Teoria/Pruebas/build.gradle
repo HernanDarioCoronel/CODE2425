@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'jacoco' // cobertura
+
 }
 
 group = 'org.example'
@@ -16,4 +18,13 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+    }
 }

@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Banco</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Banco (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Banco</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class Banco {
+&nbsp;    //se cambió todos a private y se implementaron getters y setters
+&nbsp;    private String idFiscal;
+&nbsp;    private String nombre;
+&nbsp;    private String direccion;
+&nbsp;    private int numeroEmpleados;
+&nbsp;    private List&lt;Cliente&gt; clientes;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;    public Banco(String idFiscal, String nombre, String direccion, int numeroEmpleados) {</b>
+<b class="nc">&nbsp;        this.idFiscal = idFiscal;</b>
+<b class="nc">&nbsp;        this.nombre = nombre;</b>
+<b class="nc">&nbsp;        this.direccion = direccion;</b>
+<b class="nc">&nbsp;        this.numeroEmpleados = numeroEmpleados;</b>
+<b class="nc">&nbsp;        this.clientes = new ArrayList&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void addCliente(Cliente cliente) {
+<b class="nc">&nbsp;        clientes.add(cliente);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void removeCliente(Cliente cliente) {
+<b class="nc">&nbsp;        clientes.remove(cliente);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void marcarMoroso(Cliente cliente) {
+<b class="nc">&nbsp;        cliente.setMoroso(true);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getIdFiscal() {
+<b class="nc">&nbsp;        return idFiscal;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIdFiscal(String idFiscal) {
+<b class="nc">&nbsp;        this.idFiscal = idFiscal;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getNombre() {
+<b class="nc">&nbsp;        return nombre;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNombre(String nombre) {
+<b class="nc">&nbsp;        this.nombre = nombre;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getDireccion() {
+<b class="nc">&nbsp;        return direccion;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDireccion(String direccion) {
+<b class="nc">&nbsp;        this.direccion = direccion;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getNumeroEmpleados() {
+<b class="nc">&nbsp;        return numeroEmpleados;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNumeroEmpleados(int numeroEmpleados) {
+<b class="nc">&nbsp;        this.numeroEmpleados = numeroEmpleados;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Cliente&gt; getClientes() {
+<b class="nc">&nbsp;        return clientes;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setClientes(List&lt;Cliente&gt; clientes) {
+<b class="nc">&nbsp;        this.clientes = clientes;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        StringBuilder datos = new StringBuilder();</b>
+&nbsp;
+<b class="nc">&nbsp;        datos.append(nombre).append(&quot;: {\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;idFiscal: &#39;&quot;).append(idFiscal).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, direccion: &#39;&quot;).append(direccion).append(&quot;&#39;\n&quot;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;, numeroEmpleados: &quot;).append(numeroEmpleados).append(&#39;\n&#39;);</b>
+<b class="nc">&nbsp;        datos.append(&quot;\n, clientes: {&quot;);</b>
+<b class="nc">&nbsp;        for (Cliente cli : clientes) {</b>
+<b class="nc">&nbsp;            datos.append(cli.toString());</b>
+&nbsp;        }
+<b class="nc">&nbsp;        datos.append(&quot;}&quot;);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        return datos.toString();</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-04-04 18:48</div>
+</div>
+</body>
+</html>

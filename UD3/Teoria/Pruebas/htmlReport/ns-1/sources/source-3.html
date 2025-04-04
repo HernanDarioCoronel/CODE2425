@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ClienteEmpresa</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: ClienteEmpresa (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ClienteEmpresa</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import java.time.LocalDate;
+&nbsp;
+&nbsp;public class ClienteEmpresa extends Cliente{
+&nbsp;    private String idFiscal;
+&nbsp;    private String tipoEmpresa;
+&nbsp;    private int numEmpleados;
+&nbsp;    private double facturacionAnual;
+&nbsp;
+&nbsp;    public ClienteEmpresa(String id, String nombre, String direccion, String contacto, String email, LocalDate fechaAlta, String idFiscal, String tipoEmpresa, int numEmpleados, double facturacionAnual) {
+<b class="nc">&nbsp;        super(id, nombre, direccion, contacto, email, fechaAlta);</b>
+<b class="nc">&nbsp;        this.idFiscal = idFiscal;</b>
+<b class="nc">&nbsp;        this.tipoEmpresa = tipoEmpresa;</b>
+&nbsp;        //se inicializó numEmpleados
+<b class="nc">&nbsp;        this.numEmpleados = numEmpleados;</b>
+<b class="nc">&nbsp;        this.facturacionAnual = facturacionAnual;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getIdFiscal() {
+<b class="nc">&nbsp;        return idFiscal;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIdFiscal(String idFiscal) {
+<b class="nc">&nbsp;        this.idFiscal = idFiscal;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getTipoEmpresa() {
+<b class="nc">&nbsp;        return tipoEmpresa;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setTipoEmpresa(String tipoEmpresa) {
+<b class="nc">&nbsp;        this.tipoEmpresa = tipoEmpresa;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getNumEmpleados() {
+<b class="nc">&nbsp;        return numEmpleados;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNumEmpleados(int numEmpleados) {
+<b class="nc">&nbsp;        this.numEmpleados = numEmpleados;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public double getFacturacionAnual() {
+<b class="nc">&nbsp;        return facturacionAnual;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setFacturacionAnual(double facturacionAnual) {
+<b class="nc">&nbsp;        this.facturacionAnual = facturacionAnual;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        return &quot;ClienteEmpresa{&quot; +</b>
+&nbsp;            //super()
+&nbsp;            &quot;idFiscal=&#39;&quot; + idFiscal + &#39;\&#39;&#39; +
+&nbsp;            &quot;, tipoEmpresa=&#39;&quot; + tipoEmpresa + &#39;\&#39;&#39; +
+&nbsp;            &quot;, numEmpleados=&quot; + numEmpleados +
+&nbsp;            &quot;, facturacionAnual=&quot; + facturacionAnual +
+&nbsp;            &#39;}&#39;;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-04-04 18:48</div>
+</div>
+</body>
+</html>

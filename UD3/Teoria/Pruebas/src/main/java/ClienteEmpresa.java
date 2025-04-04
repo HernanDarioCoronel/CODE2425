@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class ClienteEmpresa extends Cliente{
+public class ClienteEmpresa extends Cliente {
     private String idFiscal;
     private String tipoEmpresa;
     private int numEmpleados;
@@ -49,8 +49,8 @@ public class ClienteEmpresa extends Cliente{
 
     @Override
     public String toString() {
-        return "ClienteEmpresa{" +
-            super()+
+        return "Empresa{" +
+            super.toString() +
             "idFiscal='" + idFiscal + '\'' +
             ", tipoEmpresa='" + tipoEmpresa + '\'' +
             ", numEmpleados=" + numEmpleados +

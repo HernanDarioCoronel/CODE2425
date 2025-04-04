@@ -8,12 +8,19 @@ public class CuentaCorriente extends CuentaBancaria {
 
     @Override
     public void retirar(double cantidad) {
-        saldo -= cantidad;
+        this.setSaldo(this.getSaldo() - cantidad);
     }
 
     //se lanza una excepcion ya que no tiene sentido implementar invertir con 0% de intereses
     @Override
     public double invertir(double cantidad, int meses) {
         throw new UnsupportedOperationException("Cuenta corriente no tiene intereses");
+    }
+
+    @Override
+    public String toString() {
+        String datos = super.toString();
+        return "Cuenta Corriente" +
+            datos;
     }
 }

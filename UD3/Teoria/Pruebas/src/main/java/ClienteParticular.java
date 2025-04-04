@@ -13,4 +13,47 @@ public class ClienteParticular extends Cliente {
         this.nominaDomiciliada = nominaDomiciliada;
         this.cuantiaNomina = cuantiaNomina;
     }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public boolean isNominaDomiciliada() {
+        return nominaDomiciliada;
+    }
+
+    public void setNominaDomiciliada(boolean nominaDomiciliada) {
+        this.nominaDomiciliada = nominaDomiciliada;
+    }
+
+    public double getCuantiaNomina() {
+        return cuantiaNomina;
+    }
+
+    public void setCuantiaNomina(double cuantiaNomina) {
+        this.cuantiaNomina = cuantiaNomina;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteParticular{" +
+            super.toString() +
+            "dni='" + dni + '\'' +
+            ", apellidos='" + apellidos + '\'' +
+            ", nominaDomiciliada=" + nominaDomiciliada +
+            ", cuantiaNomina=" + cuantiaNomina +
+            '}';
+    }
 }
