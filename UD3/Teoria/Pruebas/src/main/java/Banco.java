@@ -19,7 +19,11 @@ public class Banco {
     }
 
     public void addCliente(Cliente cliente) {
-        clientes.add(cliente);
+        if (cliente != null) {
+            clientes.add(cliente);
+        } else {
+            throw new NullPointerException("Cliente no puede ser nulo");
+        }
     }
 
     public void removeCliente(Cliente cliente) {
@@ -75,10 +79,10 @@ public class Banco {
         StringBuilder datos = new StringBuilder();
 
         datos.append(nombre).append(": {\n");
-        datos.append("idFiscal: '").append(idFiscal).append("'\n");
-        datos.append(", direccion: '").append(direccion).append("'\n");
-        datos.append(", numeroEmpleados: ").append(numeroEmpleados).append('\n');
-        datos.append("\n, clientes: {");
+        datos.append("Id Fiscal: '").append(idFiscal).append("'\n");
+        datos.append("Direccion: '").append(direccion).append("'\n");
+        datos.append("Numero de Empleados: ").append(numeroEmpleados).append('\n');
+        datos.append("Clientes: {");
         for (Cliente cli : clientes) {
             datos.append(cli.toString());
         }

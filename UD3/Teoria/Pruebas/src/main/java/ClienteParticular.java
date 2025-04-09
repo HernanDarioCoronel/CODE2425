@@ -48,12 +48,11 @@ public class ClienteParticular extends Cliente {
 
     @Override
     public String toString() {
-        return "ClienteParticular{" +
+        return "\n\tCliente Particular: {\n" +
             super.toString() +
-            "dni='" + dni + '\'' +
-            ", apellidos='" + apellidos + '\'' +
-            ", nominaDomiciliada=" + nominaDomiciliada +
-            ", cuantiaNomina=" + cuantiaNomina +
-            '}';
+            "\n\t\tDNI='" + dni + '\'' +
+            "\n\t\tApellidos='" + apellidos + '\'' +
+            "\n\t\tNomina Domiciliada=" + nominaDomiciliada +
+            "\n\t\tCuantia de la Nomina=" + cuantiaNomina;
     }
 }

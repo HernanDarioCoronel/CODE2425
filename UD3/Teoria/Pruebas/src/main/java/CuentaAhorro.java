@@ -19,8 +19,8 @@ public class CuentaAhorro extends CuentaBancaria {
 
     @Override
     public String toString() {
-        String datos = super.toString();
-        return "Cuenta de Ahorro" +
-            datos;
+        return "\n\t\tCuenta de Ahorro: {" +
+            super.toString() +
+            "\t\t}";
     }
 }

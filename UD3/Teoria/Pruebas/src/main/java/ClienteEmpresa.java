@@ -49,12 +49,11 @@ public class ClienteEmpresa extends Cliente {
 
     @Override
     public String toString() {
-        return "Empresa{" +
+        return "\n\tCliente Empresa: {\n" +
             super.toString() +
-            "idFiscal='" + idFiscal + '\'' +
-            ", tipoEmpresa='" + tipoEmpresa + '\'' +
-            ", numEmpleados=" + numEmpleados +
-            ", facturacionAnual=" + facturacionAnual +
-            '}';
+            "\n\t\tId Fiscal='" + idFiscal + '\'' +
+            "\n\t\tTipo de Empresa='" + tipoEmpresa + '\'' +
+            "\n\t\tNumero de Empleados=" + numEmpleados +
+            "\n\t\tFacturacion Anual=" + facturacionAnual;
     }
 }

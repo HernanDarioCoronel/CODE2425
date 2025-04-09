@@ -122,19 +122,19 @@ public abstract class Cliente {
     @Override
     public String toString() {
         StringBuilder datos = new StringBuilder();
-        datos.append(", nombre: {'").append(nombre).append("'\n");
-        datos.append("id: '").append(id).append("'\n");
-        datos.append(", direccion: '").append(direccion).append("'\n");
-        datos.append(", contacto: '").append(contacto).append("'\n");
-        datos.append(", email: '").append(email).append("'\n");
-        datos.append(", fechaAlta: '").append(fechaAlta).append("'\n");
-        datos.append(", moroso: '").append(moroso ? "si" : "no").append("'\n");
-        datos.append(", antiguedad: '").append(antiguedad).append("'\n");
-        datos.append("Cuentas: {");
+        datos.append("\t\tNombre: '").append(nombre).append("'\n");
+        datos.append("\t\tId: '").append(id).append("'\n");
+        datos.append("\t\tDireccion: '").append(direccion).append("'\n");
+        datos.append("\t\tContacto: '").append(contacto).append("'\n");
+        datos.append("\t\tEmail: '").append(email).append("'\n");
+        datos.append("\t\tFecha de Alta: '").append(fechaAlta).append("'\n");
+        datos.append("\t\tMoroso: '").append(moroso ? "si" : "no").append("'\n");
+        datos.append("\t\tAntiguedad: '").append(antiguedad).append("'\n");
+        datos.append("\t\tCuentas: {");
         for (CuentaBancaria cta : cuentas) {
             datos.append(cta.toString());
         }
-        datos.append("}");
+        datos.append("\n\t}");
 
         return datos.toString();
     }
